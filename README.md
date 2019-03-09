@@ -38,7 +38,7 @@ export class AppModule { }
 
 ```
 2. Second, use it in your component in one of two ways:
-   1. in your *.ts file:
+   - in your *.ts file:
 ```angular2
 import {Component, OnInit} from '@angular/core';
 import {NumberToTextPipe} from 'ng-number-to-text/lib/pipes/number-to-text.pipe';
@@ -64,13 +64,13 @@ export class AppComponent implements OnInit {
   }
 }
 ```
-   2. in your *.html file:
+   - in your *.html file:
 ```html
 <h1>{{'45' | numberToText}}</h1>
 <h1>{{'45' | numberToTextAr}}</h1>
 ```
 ## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+Feel free to contribute [GitHub](https://github.com/AhmedBadee/Number-To-Text.git).
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
