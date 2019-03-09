@@ -7,6 +7,10 @@
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AhmedBadee/Number-To-Text.git"
+  },
   "keywords": [
     "ordinal",
     "numbers",
