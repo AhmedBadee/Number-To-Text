@@ -16,7 +16,7 @@ export class NumberToTextPipe implements PipeTransform {
     return 'The ' + text;
   }
   
-  checkNumber(value: number): string {
+  private checkNumber(value: number): string {
     if (this.checkZero(value)) {
       return 'zeroth';
     } else {
@@ -43,11 +43,11 @@ export class NumberToTextPipe implements PipeTransform {
     }
   }
 
-  checkZero(value: number): boolean {
+  private checkZero(value: number): boolean {
     return value === 0;
   }
 
-  checkSingle(value: number): string {
+  private checkSingle(value: number): string {
     if (value < 10 && value > 0) {
       if (value === 1)
         return 'first';
@@ -72,7 +72,7 @@ export class NumberToTextPipe implements PipeTransform {
     }
   }
 
-  checkTenth(value: number): string {
+  private checkTenth(value: number): string {
     if (value > 10 && value < 20) {
       if (value === 11)
         return 'eleventh';
@@ -97,7 +97,7 @@ export class NumberToTextPipe implements PipeTransform {
     }
   }
 
-  checkTwentieth(value: number): string {
+  private checkTwentieth(value: number): string {
     let prefix = 'twenty-';
     if (value > 20 && value < 30) {
       value -= 20;
@@ -107,7 +107,7 @@ export class NumberToTextPipe implements PipeTransform {
     }
   }
 
-  checkThirtieth(value: number): string {
+  private checkThirtieth(value: number): string {
     let prefix = 'thirty-';
     if (value > 30 && value < 40) {
       value -= 30;
@@ -117,7 +117,7 @@ export class NumberToTextPipe implements PipeTransform {
     }
   }
 
-  checkFortieth(value: number): string {
+  private checkFortieth(value: number): string {
     let prefix = 'forty-';
     if (value > 40 && value < 50) {
       value -= 40;
@@ -127,7 +127,7 @@ export class NumberToTextPipe implements PipeTransform {
     }
   }
 
-  checkFiftieth(value: number): string {
+  private checkFiftieth(value: number): string {
     let prefix = 'fifty-';
     if (value > 50 && value < 60) {
       value -= 50;
@@ -137,7 +137,7 @@ export class NumberToTextPipe implements PipeTransform {
     }
   }
 
-  checkSixtieth(value: number): string {
+  private checkSixtieth(value: number): string {
     let prefix = 'sixty-';
     if (value > 60 && value < 70) {
       value -= 60;
@@ -147,7 +147,7 @@ export class NumberToTextPipe implements PipeTransform {
     }
   }
 
-  checkSeventieth(value: number): string {
+  private checkSeventieth(value: number): string {
     let prefix = 'seventy-';
     if (value > 70 && value < 80) {
       value -= 70;
@@ -157,7 +157,7 @@ export class NumberToTextPipe implements PipeTransform {
     }
   }
 
-  checkEightieth(value: number): string {
+  private checkEightieth(value: number): string {
     let prefix = 'eighty-';
     if (value > 80 && value < 90) {
       value -= 80;
@@ -167,7 +167,7 @@ export class NumberToTextPipe implements PipeTransform {
     }
   }
 
-  checkNinetieth(value: number): string {
+  private checkNinetieth(value: number): string {
     let prefix = 'ninety-';
     if (value > 90 && value < 100) {
       value -= 90;

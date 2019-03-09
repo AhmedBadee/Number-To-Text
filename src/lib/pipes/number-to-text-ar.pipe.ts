@@ -17,7 +17,7 @@ export class NumberToTextArPipe implements PipeTransform {
     return this.checkNumber(number);
   }
 
-  checkNumber(value: number): string {
+  private checkNumber(value: number): string {
     if (this.checkZero(value)) {
       return 'الارضى';
     } else {
@@ -44,11 +44,11 @@ export class NumberToTextArPipe implements PipeTransform {
     }
   }
 
-  checkZero(value: number): boolean {
+  private checkZero(value: number): boolean {
     return value === 0;
   }
 
-  checkSingle(value: number): string {
+  private checkSingle(value: number): string {
     if (value < 10 && value > 0) {
       if (value === 1)
         return 'الاول';
@@ -73,7 +73,7 @@ export class NumberToTextArPipe implements PipeTransform {
     }
   }
 
-  checkTenth(value: number): string {
+  private checkTenth(value: number): string {
     let prefix = ' عشر';
     if (value > 10 && value < 20) {
       value -= 10;
@@ -86,7 +86,7 @@ export class NumberToTextArPipe implements PipeTransform {
     }
   }
 
-  checkTwentieth(value: number): string {
+  private checkTwentieth(value: number): string {
     let prefix = ' و العشرون';
     if (value > 20 && value < 30) {
       value -= 20;
@@ -99,7 +99,7 @@ export class NumberToTextArPipe implements PipeTransform {
     }
   }
 
-  checkThirtieth(value: number): string {
+  private checkThirtieth(value: number): string {
     let prefix = ' و الثلاثون';
     if (value > 30 && value < 40) {
       value -= 30;
@@ -112,7 +112,7 @@ export class NumberToTextArPipe implements PipeTransform {
     }
   }
 
-  checkFortieth(value: number): string {
+  private checkFortieth(value: number): string {
     let prefix = ' و الاربعون';
     if (value > 40 && value < 50) {
       value -= 40;
@@ -125,7 +125,7 @@ export class NumberToTextArPipe implements PipeTransform {
     }
   }
 
-  checkFiftieth(value: number): string {
+  private checkFiftieth(value: number): string {
     let prefix = ' و الخمسون';
     if (value > 50 && value < 60) {
       value -= 50;
@@ -138,7 +138,7 @@ export class NumberToTextArPipe implements PipeTransform {
     }
   }
 
-  checkSixtieth(value: number): string {
+  private checkSixtieth(value: number): string {
     let prefix = ' و الستون';
     if (value > 60 && value < 70) {
       value -= 60;
@@ -151,7 +151,7 @@ export class NumberToTextArPipe implements PipeTransform {
     }
   }
 
-  checkSeventieth(value: number): string {
+  private checkSeventieth(value: number): string {
     let prefix = ' و السبعون';
     if (value > 70 && value < 80) {
       value -= 70;
@@ -164,7 +164,7 @@ export class NumberToTextArPipe implements PipeTransform {
     }
   }
 
-  checkEightieth(value: number): string {
+  private checkEightieth(value: number): string {
     let prefix = ' و الثمانون';
     if (value > 80 && value < 90) {
       value -= 80;
@@ -177,7 +177,7 @@ export class NumberToTextArPipe implements PipeTransform {
     }
   }
 
-  checkNinetieth(value: number): string {
+  private checkNinetieth(value: number): string {
     let prefix = ' و التسعون';
     if (value > 90 && value < 100) {
       value -= 90;
