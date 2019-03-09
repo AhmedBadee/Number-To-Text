@@ -5,8 +5,9 @@ Number To Text is an angular module that contains a set of pipes to convert numb
 ## Features
 1. Convert numbers into words for both languages (Arabic and English)
    -more languages will be added later-.
-2. Can convert from 0 to 100 as ordinal numbers.
-3. It can be used for ordering, building floors, etc.
+2. For Arabic language, Masculine and Feminine expressions are added.
+3. Can convert from 0 to 100 as ordinal numbers.
+4. It can be used for ordering, building floors, etc.
 
 ## Installation
 
@@ -43,31 +44,37 @@ export class AppModule { }
 import {Component, OnInit} from '@angular/core';
 import {NumberToTextPipe} from 'ng-number-to-text/lib/pipes/number-to-text.pipe';
 import {NumberToTextArPipe} from 'ng-number-to-text/lib/pipes/number-to-text-ar.pipe';
+import {NumberToTextArFemPipe} from 'ng-number-to-text/lib/pipes/number-to-text-ar-fem.pipe';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [NumberToTextPipe, NumberToTextArPipe]
+  providers: [NumberToTextPipe, NumberToTextArPipe, NumberToTextArFemPipe]
 })
 export class AppComponent implements OnInit {
   textEn: string;
-  textAr: string;
-
-  constructor(
-    private numberToTextPipe: NumberToTextPipe,
-    private numberToTextArPipe: NumberToTextArPipe) {}
-
-  ngOnInit(): void {
-    this.textEn = this.numberToTextPipe.transform(12);
-    this.textAr = this.numberToTextArPipe.transform(12);
-  }
+    textAr: string;
+    textArFem: string;
+  
+    constructor(
+      private numberToTextPipe: NumberToTextPipe,
+      private numberToTextArPipe: NumberToTextArPipe,
+      private numberToTextArFemPipe: NumberToTextArFemPipe
+    ) {}
+  
+    ngOnInit(): void {
+      this.textEn = this.numberToTextPipe.transform(12);     // The twelfth
+      this.textAr = this.numberToTextArPipe.transform(12);   // الثانى عشر
+      this.textArFem = this.numberToTextArFemPipe.transform(12);   // الثانية عشر
+    }
 }
 ```
    - in your *.html file:
 ```html
-<h1>{{'45' | numberToText}}</h1>
-<h1>{{'45' | numberToTextAr}}</h1>
+<h1>{{'45' | numberToText}}</h1>       // The forty-fifth
+<h1>{{'45' | numberToTextAr}}</h1>     // الخامس والاربعون
+<h1>{{'45' | numberToTextArFem}}</h1>  // الخامسة والاربعون
 ```
 ## Contributing
 Feel free to contribute [GitHub](https://github.com/AhmedBadee/Number-To-Text.git).
